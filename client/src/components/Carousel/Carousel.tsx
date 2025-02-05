@@ -3,10 +3,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./Carousel.scss";
 
 
-const images = [
-  "src/assets/images/img1.png",
-  
-];
+const images = ["src/assets/images/img1.png",];
 
 
 const Carousel = () => {
@@ -15,7 +12,7 @@ const Carousel = () => {
       modules={[Navigation, Pagination, Autoplay]}
       navigation
       pagination={{ clickable: true }}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay:3000 }}
       loop
       className="carousel"
     >

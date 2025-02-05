@@ -1,32 +1,38 @@
 import { Provider } from "react-redux";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom"; // Используем Router и Routes
-import { store } from "./store/store"; // Импортируем store
-import Header from "./components/Header/Header"; // Импортируем Header
-import Footer from "./components/Footer/Footer"; // Импортируем Footer
-import Home from "./pages/Home"; // Импортируем Home
+} from "react-router-dom";
+import { useAutoOpenModal } from "./hooks/useAutoOpenModal";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import { store } from "./store/store";
+import { SignupModal } from "./components/Modal/Modal";
 
 const App = () => {
+  const { isOpen, setIsOpen } = useAutoOpenModal(3000); // Открываем модалку через 3 секунды
+
   return (
     <Provider store={store}>
       <Router>
         <Header />
         <main>
           <Routes>
-            {/* Главная страница */}
             <Route path="/" element={<Home />} />
-
-            {/* Путь home перенаправляет на главную */}
             <Route path="home" element={<Navigate to="/" replace />} />
-
-            {/* Страница 404 */}
+            {/* Здесь можно добавить другие маршруты */}
           </Routes>
         </main>
         <Footer />
+
+        {/* Модалка рендерится независимо от маршрутов */}
+        <>
+          <SignupModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        </>
       </Router>
     </Provider>
   );

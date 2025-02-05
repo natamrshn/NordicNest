@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div className={themeStyle}>
       <NavLinks />
-      Logo
+      <div>NordicNest</div>
       <NavIcons />
     </div>
   );
