@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 1000;
+  color: white;
+
+  &--scrolled,
+  &:hover {
+    background: white;
+    color: black;
+  }
+
+}
