@@ -1,0 +1,17 @@
+.faq-item {
+  width: 660px;
+
+  &__question{
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__answer {
+    cursor: default;
+  }
+}
