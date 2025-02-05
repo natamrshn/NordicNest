@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom"; // Используем Router и Routes
-import { store } from "./store"; // Импортируем store
+import { store } from "./store/store"; // Импортируем store
 import Header from "./components/Header/Header"; // Импортируем Header
 import Footer from "./components/Footer/Footer"; // Импортируем Footer
 import Home from "./pages/Home"; // Импортируем Home

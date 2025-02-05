@@ -1,7 +1,11 @@
+// store.ts
 import { configureStore } from "@reduxjs/toolkit";
+import themeReducer from "./slices/themeSlice";
 
 export const store = configureStore({
-  reducer: {}, // Добавишь редюсеры сюда позже
+  reducer: {
+    theme: themeReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

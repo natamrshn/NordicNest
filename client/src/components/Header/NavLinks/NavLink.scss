@@ -1,0 +1,33 @@
+/* variables.scss */
+
+.nav-links {
+  display: flex;
+  gap: 46px;
+  padding: 9.5px 0;
+  background-color: transparent;  /* Прозрачный фон */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Изначально белый цвет текста для светлой темы */
+  &.dark-theme {
+    a {
+      color: white;  /* Белый цвет текста для тёмной темы */
+    }
+  }
+
+  /* Для светлой темы (по умолчанию или при прокрутке) */
+  &.light-theme {
+    a {
+      color: black;  /* Чёрный цвет текста для светлой темы */
+    }
+  }
+
+  /* Стили для ховера на контейнере */
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      scale: 1.1; /* Увеличение размера при hover */
+    }
+  }
+}
